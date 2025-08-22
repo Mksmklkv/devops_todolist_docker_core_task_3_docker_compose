@@ -15,6 +15,11 @@ services:
     depends_on:
       - mysql
     restart: unless-stopped
+    environment:
+      - DB_NAME=app_db
+      - DB_USER=app_user
+      - DB_PASSWORD=1234
+      - DB_HOST=mysql
   mysql:
     image: mysql:1.0
     build:
